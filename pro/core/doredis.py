@@ -37,7 +37,9 @@ class DoRedis(base_class):
     
     def get(self,name,encoding='utf8'):
         # TODO
-        ret = self.db.get(name).lstrip(b'\xac\xed\x00\x05sr\x00\x13')  #.lstrip(b'\xac\xed\x00\x05sr\x00\x13')
+        ret = self.db.get(name)
+        print(ret)
+        ret=ret.lstrip(b'\xac\xed\x00\x05sr\x00\x13')  #.lstrip(b'\xac\xed\x00\x05sr\x00\x13')
         
         return ret.decode(encoding)
         
@@ -73,9 +75,11 @@ class DoRedis(base_class):
         
     
 
-aa=DoRedis('172.16.9.131',password='AAAaaa123')
+# aa=DoRedis('172.16.9.131',password='AAAaaa123')
 # print(aa.list_keys())
-print(aa.get('degree'))
+# print(aa.get('15800707121:noRepetition'))
+
+# print(aa.get('15800707121:userInfo'))
 
 # try:
 #     aa = DoMysql('172.16.9.28', 'root', 'a111111', 'gtobusinessdb')

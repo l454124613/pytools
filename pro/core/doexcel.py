@@ -244,12 +244,12 @@ class DoExcel:
                 return False, '文件状态不正确：'+self.path
 
 
-d = DoExcel(r'C:\Users\lixuecheng\Desktop\时间管理测试范围 - 副本.xlsx')
-# c = d.read('ucb', 1, 1)
-d.write('ucb',30,7,12322)
-d.write('ucb',30,8,112322)
-d.write('ucb1',30,8,112322)
-d.close()
+# d = DoExcel(r'C:\Users\lixuecheng\Desktop\时间管理测试范围 - 副本.xlsx')
+# # c = d.read('ucb', 1, 1)
+# d.write('ucb',30,7,12322)
+# d.write('ucb',30,8,112322)
+# d.write('ucb1',30,8,112322)
+# d.close()
 # c = d.read('ucb', 30, 7)
 # d.write('ttt',2,2,13)
 # c=d.read('ucb',3,3)

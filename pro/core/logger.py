@@ -39,7 +39,15 @@ log_name = log_path + rq + '_all.log'
 logfile = log_name
 if not os.path.exists(log_path):
     # print(log_path)
-    os.makedirs(log_path)
+    try:
+        os.makedirs(log_path)
+    except :
+        
+        log_path = os.getcwd() + '/Logs/all/'
+        log_name = log_path + rq + '_all.log'
+        logfile = log_name
+        if not os.path.exists(log_path):
+            os.makedirs(log_path)
 for root, dirs, files in os.walk(os.path.dirname(log_path)):
     for i in files:
         fpath = os.path.join(root, i)
@@ -57,7 +65,14 @@ log_path = os.getcwd() + '/../Logs/debug/'
 log_name = log_path + rq + '_debug.log'
 logfile = log_name
 if not os.path.exists(log_path):
-    os.makedirs(log_path)
+    try:
+        os.makedirs(log_path)
+    except :
+        log_path = os.getcwd() + '/Logs/debug/'
+        log_name = log_path + rq + '_debug.log'
+        logfile = log_name
+        if not os.path.exists(log_path):
+            os.makedirs(log_path)
 for root, dirs, files in os.walk(os.path.dirname(log_path)):
     for i in files:
         fpath = os.path.join(root, i)
@@ -79,7 +94,14 @@ log_name = log_path + rq + '_ifo.log'
 logfile = log_name
 
 if not os.path.exists(log_path):
-    os.makedirs(log_path)
+    try:
+        os.makedirs(log_path)
+    except :
+        log_path = os.getcwd() + '/Logs/info/'
+        log_name = log_path + rq + '_ifo.log'
+        logfile = log_name
+        if not os.path.exists(log_path):
+            os.makedirs(log_path)
 for root, dirs, files in os.walk(os.path.dirname(log_path)):
     for i in files:
         fpath = os.path.join(root, i)
@@ -101,7 +123,14 @@ log_name = log_path + rq + '_warn.log'
 logfile = log_name
 
 if not os.path.exists(log_path):
-    os.makedirs(log_path)
+    try:
+        os.makedirs(log_path)
+    except :
+        log_path = os.getcwd() + '/Logs/warn/'
+        log_name = log_path + rq + '_warn.log'
+        logfile = log_name
+        if not os.path.exists(log_path):
+            os.makedirs(log_path)
 for root, dirs, files in os.walk(os.path.dirname(log_path)):
     for i in files:
         fpath = os.path.join(root, i)
@@ -121,7 +150,14 @@ log_path = os.getcwd() + '/../Logs/error/'
 log_name = log_path + rq + '_error.log'
 logfile = log_name
 if not os.path.exists(log_path):
-    os.makedirs(log_path)
+    try:
+        os.makedirs(log_path)
+    except :
+        log_path = os.getcwd() + '/Logs/error/'
+        log_name = log_path + rq + '_error.log'
+        logfile = log_name
+        if not os.path.exists(log_path):
+            os.makedirs(log_path)
 for root, dirs, files in os.walk(os.path.dirname(log_path)):
     for i in files:
         fpath = os.path.join(root, i)

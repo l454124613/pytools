@@ -109,8 +109,9 @@ class DoMysql(base_class):
 
 
 # try:
-#     aa = DoMysql('172.16.9.28', 'root', 'a111111', 'gtobusinessdb')
-#     aa.run('UPDATE am_resign set modified_by=\'d15\' where  resign_id =1')
+# aa = DoMysql('172.16.9.28', 'root', 'a111111', '')
+
+# print(aa.run('SHOW DATABASES'))
 #     # raise Exception('')
 #     aa.commit()
 # except:

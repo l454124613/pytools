@@ -75,7 +75,7 @@ class DoMssql(base_class):
                 return self.cursor.rowcount, self.res
             except Exception as e:
                 self.e = e
-                raise Exception(sql+',执行sql失败，' + p_to_uri(e.__str__()))
+                raise Exception(sql+',执行sql失败，' + e.__str__())
 
         else:
             raise Exception('数据库链接失败')
@@ -120,5 +120,9 @@ class DoMssql(base_class):
 
 # aa.run('SELECT * from am_resign ')
 # a=DoMssql('172.16.8.151','sa','AAAaaa1234','wt_test')
-# b=a.run('SELECT TOP 1000 * FROM [dbo].[公司算法分类]')
+# a=DoMssql('172.16.8.151','sa','AAAaaa1234','')
+
+# b=a.run('SELECT TOP 1 * FROM [dbo].[公司算法分类]')
+# b=a.run("SELECT name from sysdatabases")
+
 # print(b)
