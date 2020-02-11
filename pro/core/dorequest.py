@@ -12,6 +12,10 @@ from urllib3 import encode_multipart_formdata
 
 
 class DoRequest(base_class):
+    '''
+    用于http请求
+    @params need_exception 默认true，执行时，raise 异常；false，执行时，不中断，异常在方法后返回值（bool，str）
+    '''
     def __init__(self,need_exception=True):
         self.s = session()
         self.s.headers['Content-Type'] = 'application/json;charset=UTF-8'

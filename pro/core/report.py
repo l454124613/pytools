@@ -5,7 +5,7 @@ import os
 
 
 class Template_mixin(object):
-    """html报告"""
+    """html报告 模板"""
     HTML_TMPL = """
         <!DOCTYPE html>
         <html lang="en">
@@ -99,6 +99,7 @@ class Template_mixin(object):
         </html>"""
 
     TABLE_TMPL = """
+    
         <tr class='allClass %(res)s'>
             <td style='width:100px'>%(step)s</td>
             <td style='width:250px'><div style="white-space: pre-line;overflow:hidden;word-break:break-word;">%(runtime)s</div></td>
@@ -108,6 +109,11 @@ class Template_mixin(object):
 
 
 class TestReport:
+    '''
+    此方法用于生产测试报告html版
+    @name 测试报告的名称，不填写，默认‘测试报告’
+    
+    '''
     def __init__(self, name=None):
         self.numfail = 0
         self.numsucc = 0
@@ -126,13 +132,21 @@ class TestReport:
             self.name = name
 
     def clear_res(self):
+        '''
+        清空测试报告内容
+        '''
         self.table_tr0 = ''
 
-    '''
-    res,0,未运行，1，成功，2，失败
-    '''
+    
 
     def add_res(self, name, res, reason=''):
+        '''
+        @params name 测试用例的名称
+        
+        @params res 0:未运行，1:成功，2:失败
+        
+        @params reason 备注信息
+        '''
         self.index += 1
         ss = ''
         rr = ''
@@ -161,6 +175,10 @@ class TestReport:
         self.table_tr0 += table_td
 
     def create_report(self, path=None):
+        '''
+        生产测试报告
+        @params path 报告的存放路径
+        '''
         end_time = datetime.datetime.now()
         total_str = '用例执行<a onclick="showall()">全部 %s</a>，<a onclick="showpass()">通过 %s</a>，<a onclick="showfail()">失败 %s</a>,<a onclick="showno()">未运行 %s</a>' % (
             self.numfail + self.numsucc + self.numstop, self.numsucc, self.numfail, self.numstop)
